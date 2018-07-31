@@ -17,6 +17,7 @@ At least Asterisk 13 is required. These changes were last tested with Asterisk 1
 	cd /usr/src/
 	wget downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
 	tar zxf ./asterisk*
+	rm asterisk-13-current.tar.gz
 	cd ./asterisk*
 	sudo apt-get --assume-yes install build-essential libssl-dev libncurses-dev libnewt-dev libxml2-dev libsqlite3-dev uuid-dev libjansson-dev libblocksruntime-dev xmlstarlet
 
@@ -25,7 +26,7 @@ Apply the patch:
 	wget github.com/traud/asterisk-alaw16/archive/master.zip
 	unzip -qq master.zip
 	rm master.zip
-	cp --verbose --recursive ./asterisk-alaw16/* ./
+	cp --verbose --recursive ./asterisk-alaw16*/* ./
 	patch -p0 <./alaw16_pass_through.patch
 	patch -p0 <./alaw16_transcoding.patch
 
